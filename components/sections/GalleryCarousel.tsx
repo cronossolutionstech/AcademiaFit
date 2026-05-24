@@ -40,11 +40,6 @@ const galleryImages = [
     title: "Personal Training",
     description: "Acompanhamento profissional especializado"
   },
-  {
-    url: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=2070",
-    title: "Lounge",
-    description: "Área de convivência e descanso"
-  }
 ]
 
 const duplicatedImages = [...galleryImages, ...galleryImages]
