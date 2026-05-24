@@ -17,14 +17,14 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Navbar />
-      <HeroSection />      {/* Já tem id="inicio" */}
-      <BenefitsSection />   {/* Já tem id="beneficios" */}
-      <ShowcaseSection />   {/* Já tem id="treinamentos" */}
-      <GalleryCarousel />   {/* Já tem id="estrutura" */}
-      <TestimonialsSection /> {/* Já tem id="depoimentos" */}
+      <HeroSection />      
+      <BenefitsSection />  
+      <ShowcaseSection />   
+      <GalleryCarousel />   
+      <TestimonialsSection />
       <PricingSection />
       <CTASection />
-      <Footer />           {/* Já tem id="contato" */}
+      <Footer />          
     </main>
   )
 }

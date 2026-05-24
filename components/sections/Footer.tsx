@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowUp, Dumbbell, Clock, MapPin, Phone, Mail } from 'lucide-react'
+import { ArrowUp, Clock, MapPin, Phone, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 export function Footer() {
   const scrollToTop = () => {
@@ -20,14 +21,18 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-                  <Dumbbell className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold">
-                  Sempre<span className="text-gradient">Fit</span>
-                </h3>
+              {/* Logo - apenas a imagem, maior */}
+              <div className="mb-6">
+                <Image
+                  src="/images/logo_sf.png"
+                  alt="SempreFit"
+                  width={200}
+                  height={200}
+                  className="w-auto h-20 object-contain"
+                  priority
+                />
               </div>
+              
               <p className="text-gray-400 mb-6 max-w-md">
                 Academia premium com estrutura de ponta e profissionais qualificados 
                 para transformar sua vida através do esporte e bem-estar.
@@ -93,6 +98,13 @@ export function Footer() {
               </div>
             </div>
             
+            {/* Halter animado */}
+            <motion.div
+              className="mt-6 flex justify-center"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+            </motion.div>
           </motion.div>
         </div>
         
