@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-foreground: #ffffff;
+  --color-blue-neon: #2563EB;
+  --color-purple-neon: #7C3AED;
+  --color-cyan-neon: #06B6D4;
+  
+  --animate-gradient: gradient 8s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  
+  @keyframes gradient {
+    0%, 100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      opacity: 0.3;
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 0.6;
+      filter: blur(20px);
+    }
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-effect-neon {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #2563EB, #7C3AED, #06B6D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .text-gradient-fit {
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  .neon-glow-blue {
+    text-shadow: 0 0 10px #2563EB, 0 0 20px #2563EB, 0 0 30px #2563EB;
+  }
+  
+  .neon-glow-purple {
+    text-shadow: 0 0 10px #7C3AED, 0 0 20px #7C3AED, 0 0 30px #7C3AED;
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  }
+  
+  .animate-gradient {
+    animation: gradient 8s linear infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-effect {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
